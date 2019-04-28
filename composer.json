@@ -1,0 +1,27 @@
+{
+    "name": "viloveul/log",
+    "description": "Viloveul Log Wrapper",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["zafex", "viloveul", "fajrulaz", "log", "component", "library"],
+    "homepage": "http://www.viloveul.com",
+    "readme": "README.MD",
+    "authors": [{
+        "name": "Fajrul Akbar Zuhdi",
+        "email": "fajrulaz@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "~7.0",
+        "psr/log": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Viloveul\\Log\\": "src/"
+        }
+    }
+}
