@@ -35,7 +35,7 @@ class FileProvider implements LoggerInterface
     {
         $message = $this->format($message, $context);
         $handle = fopen($this->target, 'a');
-        fwrite($handle, sprintf('[%s] - %s', strtoupper($level), $message) . PHP_EOL);
+        fwrite($handle, sprintf('[%s] %s', strtoupper($level), $message) . PHP_EOL);
         fclose($handle);
     }
 }
