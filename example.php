@@ -20,3 +20,5 @@ function abc()
 }
 
 trigger_error("dor");
+
+$log->process();
