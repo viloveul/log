@@ -13,10 +13,13 @@ class LoggerFactory
      */
     private static $logger;
 
-    public static function instance(): ILogger
+    /**
+     * @param bool $async
+     */
+    public static function instance(bool $async = true): ILogger
     {
         if (!(static::$logger instanceof ILogger)) {
-            static::$logger = new Logger();
+            static::$logger = new Logger($async);
             static::$logger->setCollection(new Collection());
         }
         return static::$logger;
