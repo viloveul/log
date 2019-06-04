@@ -93,7 +93,11 @@ class Logger implements ILogger
 
     public function process(): void
     {
-        array_walk($this->queue, 'call_user_func');
+        while ($q = array_shift($this->queue)) {
+            if (is_callable($q)) {
+                $q();
+            }
+        }
     }
 
     /**
