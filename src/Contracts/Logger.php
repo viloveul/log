@@ -14,5 +14,7 @@ interface Logger extends LoggerInterface
 
     public function handleException(Throwable $e): void;
 
+    public function process(): void;
+
     public function setCollection(Collection $collection): void;
 }

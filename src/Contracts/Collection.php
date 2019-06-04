@@ -8,9 +8,9 @@ interface Collection
 {
     /**
      * @param LoggerInterface $log
-     * @param array           $types
+     * @param string          $criteria
      */
-    public function add(LoggerInterface $log, array $types): void;
+    public function add(LoggerInterface $log, string $criteria): void;
 
     public function all(): array;
 }

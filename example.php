@@ -5,17 +5,18 @@ ini_set('display_errors', 'On');
 
 require __DIR__ . '/vendor/autoload.php';
 
-$man = Viloveul\Log\LoggerFactory::instance();
-$man->getCollection()->add(
-    new Viloveul\Log\Provider\FileProvider(__DIR__)
+$log = Viloveul\Log\LoggerFactory::instance();
+$log->getCollection()->add(
+    new Viloveul\Log\Provider\FileProvider(__DIR__),
+    'runtimeexception'
 );
 
-set_exception_handler([$man, 'handleException']);
-set_error_handler([$man, 'handleError']);
+set_error_handler([$log, 'handleError']);
+register_shutdown_function([$log, 'process']);
 
 function abc()
 {
-	wow();
+    wow();
 }
 
-abc();
+trigger_error("dor");
